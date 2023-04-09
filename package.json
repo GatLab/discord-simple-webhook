@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "author": "GatLab <dev@gatlab.co.com>",
+  "author": "GatLab <dev@gatlab.co>",
   "license": "ISC",
   "repository": {
     "type": "git",
