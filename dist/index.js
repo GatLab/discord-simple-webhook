@@ -28,17 +28,13 @@ exports.DiscordEmbedComponentType = {
 };
 class Embded {
     constructor(opts) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d;
         this.type = (_a = opts.type) !== null && _a !== void 0 ? _a : exports.DiscordEmbedType.rich;
         this.timestamp = (_b = opts.timestamp) !== null && _b !== void 0 ? _b : new Date();
         this.fields = (_c = opts.fields) !== null && _c !== void 0 ? _c : [];
         this.color = (_d = opts.color) !== null && _d !== void 0 ? _d : Math.floor(Math.random() * 10000000);
-        this.provider = (_e = opts.provider) !== null && _e !== void 0 ? _e : { name: "Gatlab™" };
-        this.footer = (_f = opts.footer) !== null && _f !== void 0 ? _f : {
-            text: 'Gatlab™',
-            icon_url: 'https://avatars.githubusercontent.com/u/112801555?s=200&v=4',
-            proxy_icon_url: 'https://avatars.githubusercontent.com/u/112801555?s=200&v=4'
-        };
+        this.provider = Object.assign({ name: "Gatlab™" }, opts.provider);
+        this.footer = Object.assign({ text: 'Gatlab™', icon_url: 'https://avatars.githubusercontent.com/u/112801555?s=200&v=4', proxy_icon_url: 'https://avatars.githubusercontent.com/u/112801555?s=200&v=4' }, opts.footer);
         Object.assign(this, opts);
     }
 }

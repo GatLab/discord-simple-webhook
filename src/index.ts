@@ -204,11 +204,12 @@ export class Embded implements DiscordEmbed {
         this.timestamp = opts.timestamp ?? new Date();
         this.fields = opts.fields ?? [];
         this.color = opts.color ?? Math.floor(Math.random() * 10000000);
-        this.provider = opts.provider ?? {name: "Gatlab™"}
-        this.footer = opts.footer ?? {
+        this.provider = {name: "Gatlab™" ,...opts.provider}
+        this.footer =  {
             text: 'Gatlab™',
             icon_url: 'https://avatars.githubusercontent.com/u/112801555?s=200&v=4',
             proxy_icon_url: 'https://avatars.githubusercontent.com/u/112801555?s=200&v=4'
+            ,...opts.footer
         };
         Object.assign(this, opts);
     }
@@ -235,7 +236,7 @@ export class WebHook {
         this.url = webhook_url
     }
 
-    async sendMessage(msg: Partial<SendDiscordWebhookMessage>, max_retry = 50) {
+    async sendMessage(msg: Partial<SendDiscordWebhookMessage>, max_retry = 50):Promise<object> {
         try {
             const configs: AxiosRequestConfig = {validateStatus: () => true}
             let payload = msg

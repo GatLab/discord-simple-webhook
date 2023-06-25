@@ -181,6 +181,6 @@ export declare class Attachment {
 export declare class WebHook {
     url: string;
     constructor(webhook_url: string);
-    sendMessage(msg: Partial<SendDiscordWebhookMessage>, max_retry?: number): Promise<Error>;
+    sendMessage(msg: Partial<SendDiscordWebhookMessage>, max_retry?: number): Promise<object>;
 }
 export {};
